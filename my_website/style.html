@@ -1,0 +1,170 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow: hidden;
+}
+
+/* Light Theme */
+body.light {
+  background: #f2f2f2;
+  color: #222;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.nav a:hover {
+  color: #fff;
+}
+
+.theme-toggle {
+  position: relative;
+}
+
+.switch {
+  width: 50px;
+  height: 25px;
+  background: #444;
+  border-radius: 15px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.switch::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked + .switch::after {
+  transform: translateX(25px);
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('rabbit.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.content p {
+  font-size: 1.2rem;
+}
+
+/* Bubble Animation */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  animation: rise 20s infinite;
+  bottom: -100px;
+  filter: blur(2px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* Randomize position/speed/size */
+.bubbles li:nth-child(1) { left: 10%; animation-duration: 18s; width: 40px; height: 40px; }
+.bubbles li:nth-child(2) { left: 20%; animation-duration: 22s; }
+.bubbles li:nth-child(3) { left: 25%; animation-duration: 17s; width: 50px; height: 50px; }
+.bubbles li:nth-child(4) { left: 40%; animation-duration: 20s; }
+.bubbles li:nth-child(5) { left: 55%; animation-duration: 19s; width: 60px; height: 60px; }
+.bubbles li:nth-child(6) { left: 65%; animation-duration: 23s; }
+.bubbles li:nth-child(7) { left: 75%; animation-duration: 21s; width: 35px; height: 35px; }
+.bubbles li:nth-child(8) { left: 85%; animation-duration: 16s; }
+.bubbles li:nth-child(9) { left: 95%; animation-duration: 26s; width: 45px; height: 45px; }
+.bubbles li:nth-child(10) { left: 50%; animation-duration: 24s; }
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-1200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav {
+    margin-top: 10px;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+}
+
