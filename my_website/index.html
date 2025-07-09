@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandy World</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Sandy <span>World</span></div>
+    <nav class="nav">
+      <a href="C:\Users\sandh\OneDrive\Desktop\my-project\index.html">Home</a>
+      <a href="C:\Users\sandh\OneDrive\Desktop\my-project\about.html">About</a>
+      <a href="C:\Users\sandh\OneDrive\Desktop\my-project\Skills.HTML">Skills</a>
+      <a href="C:\Users\sandh\OneDrive\Desktop\my-project\project.html">Project</a>
+      <a href="C:\Users\sandh\OneDrive\Desktop\my-project\contact.html">Contact</a>
+    </nav>
+    <div class="theme-toggle">
+      <input type="checkbox" id="toggleTheme">
+      <label for="toggleTheme" class="switch"></label>
+    </div>
+  </header>
+
+  <section class="hero">
+    <ul class="bubbles">
+      <li></li><li></li><li></li><li></li><li></li>
+      <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+    <div class="content">
+      <h1>Welcome to Sandy World</h1>
+      <p>Explore the animated beauty of design</p>
+    </div>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('toggleTheme');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('light');
+    });
+  </script>
+</body>
+</html>
